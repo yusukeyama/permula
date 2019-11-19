@@ -56,6 +56,12 @@ func Combination(list int, target int) int {
 }
 
 // Permutation is sort by permutation.
-func Permutation(list int, target int) {
-
+func Permutation(list int, target int) int {
+		target = list - target
+		answer := 1
+		var i int
+		for i = list; i >= target - 1; i-- {
+			answer *= i
+		}
+		return answer
 }
