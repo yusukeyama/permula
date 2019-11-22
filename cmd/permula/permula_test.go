@@ -16,5 +16,7 @@ func TestCombination(t *testing.T) {
 }
 
 func TestPermutation(t *testing.T) {
-
+	//normal1:3
+	res := Permutation(3, 2)
+	assert.Equal(t, res, 0)
 }
