@@ -6,7 +6,6 @@ import (
 )
 
 func TestScanToSlicebyInt(t *testing.T) {
-
 }
 
 func TestCombination(t *testing.T) {
@@ -16,7 +15,10 @@ func TestCombination(t *testing.T) {
 }
 
 func TestPermutation(t *testing.T) {
-	//normal1:3
+	//right:3
 	res := Permutation(3, 2)
-	assert.Equal(t, res, 0)
+	assert.Equal(t, res, 3)
+	//right:10
+	res = Permutation(5, 2)
+	assert.Equal(t, res, 10)
 }
