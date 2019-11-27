@@ -56,18 +56,24 @@ func Combination(list int, target int) int {
 }
 
 // Permutation is sort by permutation.
-func Permutation(list int, target int) int {
-		underCount := list - target
-		// denominator
-		danswer := 1
-		for i := 1; i < underCount + 1; i++ {
-			danswer *= i
-		}
-		// molecule
-		manswer := 1
-		for j := 1; j < manswer + 1; j++ {
-			manswer *= j
-		}
-		answer := manswer / danswer
-		return answer
+func Permutation(n int, r int) int {
+	if n == 0 || r == 0 {
+		return 0
+	}
+	underCount := n - r
+	if underCount < 0 {
+		return 0
+	}
+	// denominator
+	danswer := 1
+	for i := underCount; i > 1; i-- {
+		danswer *= i
+	}
+	// molecule
+	manswer := 1
+	for j := n; j > 1; j-- {
+		manswer *= j
+	}
+	answer := manswer / danswer
+	return answer
 }

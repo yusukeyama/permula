@@ -18,7 +18,11 @@ func TestPermutation(t *testing.T) {
 	//right:3
 	res := Permutation(3, 2)
 	assert.Equal(t, res, 6)
-	//right:10
 	res = Permutation(5, 2)
 	assert.Equal(t, res, 20)
+	//fail
+	res = Permutation(0, 0)
+	assert.Equal(t, res, 0)
+	res = Permutation(2, 3)
+	assert.Equal(t, res, 0)
 }
