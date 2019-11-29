@@ -60,6 +60,9 @@ func Permutation(n int, r int) int {
 	if n == 0 || r == 0 {
 		return 0
 	}
+	if n < 0 || r < 0 {
+		return 0
+	}
 	underCount := n - r
 	if underCount < 0 {
 		return 0
