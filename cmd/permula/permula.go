@@ -24,34 +24,22 @@ func ScanToSlicebyInt(sc *bufio.Scanner, count int) []int {
 }
 
 // Combination is sort by combination.
-func Combination(list int, target int) int {
-	if list == 0 || target == 0 {
+func Combination(n int, r int) int {
+	if n == 0 || r == 0 {
 		return 0
 	}
-	answer := 0
-	listArray := make([]int, target)
-	for i := 0; i < target; i++ {
-		listArray = append(listArray, list - i)
+	if a := n - r; a < 0 {
+		return 0
+	} 
+	danswer := 1
+	for i := n; i > 1; i-- {
+		danswer *= i
 	}
-	tmp := 0
-	for i, v := range listArray {
-		if i == 0 {
-			tmp = v
-		}
-		tmp = tmp * v
+	manswer := 1
+	for j := r; j > 1; j-- {
+		manswer *= j
 	}
-	targetArray := make([]int, target)
-	for i := 0; i < target; i++ {
-		targetArray = append(targetArray, target - 1)
-	}
-	stmp := 0
-	for i, v := range targetArray {
-		if i == 0 {
-			stmp = v
-		}
-		stmp = stmp * v
-	}
-	answer = tmp / stmp
+	answer := danswer / manswer
 	return answer
 }
 

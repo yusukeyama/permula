@@ -12,6 +12,15 @@ func TestCombination(t *testing.T) {
 	//right:3
 	res := Combination(3, 2)
 	assert.Equal(t, res, 3)
+	//right:10
+	res = Combination(5, 3)
+	assert.Equal(t, res, 20)
+	//fail:zero
+	res = Combination(0, 0)
+	assert.Equal(t, res, 0)
+	//fail:min than right
+	res = Combination(2, 3)
+	assert.Equal(t, res, 0)
 }
 
 func TestPermutation(t *testing.T) {
